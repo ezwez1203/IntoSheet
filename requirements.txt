@@ -1,0 +1,54 @@
+# ============================================
+# IntoSheet - 전체 프로젝트 의존성
+# conda 가상환경에서 pip로 설치:
+#   conda create -n intosheet python=3.10 -y
+#   conda activate intosheet
+#   pip install -r requirements.txt
+# ============================================
+
+# --- 핵심 과학 계산 ---
+numpy>=1.22.0
+scipy>=1.4.1
+
+# --- 오디오 처리 ---
+librosa
+soundfile
+
+# --- 음악/MIDI ---
+pretty_midi
+note-seq @ git+https://github.com/magenta/note-seq#egg=note_seq
+mir_eval
+
+# --- ML 프레임워크 (JAX) ---
+jax>=0.4.16
+jaxlib>=0.4.16
+
+# --- ML 프레임워크 (TensorFlow) ---
+tensorflow
+tensorflow-datasets
+
+# --- T5X / SeqIO ---
+t5
+seqio @ git+https://github.com/google/seqio#egg=seqio
+flax @ git+https://github.com/google/flax#egg=flax
+optax @ git+https://github.com/deepmind/optax#egg=optax
+clu @ git+https://github.com/google/CommonLoopUtils#egg=clu
+
+# --- 설정 관리 ---
+gin-config
+fiddle>=0.2.5
+
+# --- 유틸리티 ---
+absl-py
+immutabledict
+scikit-learn
+orbax-checkpoint>=0.5
+tensorstore>=0.1.20
+cached_property
+jaxtyping
+
+# --- 시각화 ---
+matplotlib>=3.2.1
+
+# --- MIDI → PDF 변환 ---
+music21

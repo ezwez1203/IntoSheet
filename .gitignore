@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Checkpoints (large model files)
+checkpoints/mt3/
+checkpoints/my_mt3_tiny/
+
+# PDF output
+checkpoints/pdf_output/*.pdf
+
+# Temporary
+*.tmp
+*.log
