@@ -4,6 +4,21 @@ MT3 is a multi-instrument automatic music transcription model that uses the [T5X
 
 This is not an officially supported Google product.
 
+## IntoSheet install note
+
+If you are using this repository as part of IntoSheet, do not install this
+subdirectory by itself with `pip install -e mt3/`.
+
+Install from the repository root instead:
+
+```bash
+pip install -e .
+```
+
+The local `mt3/` package depends on the local `t5x/` package that ships in the
+same repository, so standalone installation of `mt3/` is not the supported
+path for IntoSheet.
+
 ## Transcribe your own audio
 
 Use our [colab notebook](https://colab.research.google.com/github/magenta/mt3/blob/main/mt3/colab/music_transcription_with_transformers.ipynb) to

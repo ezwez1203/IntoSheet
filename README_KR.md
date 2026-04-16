@@ -75,6 +75,10 @@ bash run_all.sh install
 - `Partitur/requirements.txt` 보조 의존성 설치
 - 로컬 `t5x/`, `mt3/` 패키지 설치
 
+새 환경에서는 `pip install -e mt3/` 를 단독으로 실행하면 안 됩니다.
+`mt3/` 는 같은 저장소 안의 로컬 `t5x/` 패키지에 의존하므로, 저장소 루트에서
+`pip install -e .` 또는 `bash run_all.sh install` 을 사용해야 합니다.
+
 ### 실행
 
 #### 방법 1: 원클릭 스크립트

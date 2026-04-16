@@ -10,3 +10,15 @@
 
 - 🇰🇷 [한국어 README](README_KR.md)
 - 🇺🇸 [English README](README_EN.md)
+
+## Install
+
+Install from the repository root only:
+
+```bash
+pip install -e .
+```
+
+Do not run `pip install -e mt3/` by itself. The local `mt3` package depends on
+the local `t5x` package in this repository, so standalone `mt3/` installation
+will fail on a fresh machine.

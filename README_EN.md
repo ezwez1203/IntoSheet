@@ -75,6 +75,10 @@ The root `setup.py` now installs:
 - the extra Partitur runtime dependencies
 - the local `t5x/` and `mt3/` packages
 
+Do not run `pip install -e mt3/` by itself on a fresh machine.
+`mt3/` depends on the local `t5x/` package in this same repository, and PyPI
+does not provide a matching `t5x` package for that install path.
+
 ### Run
 
 #### Option 1: One-Click Script
