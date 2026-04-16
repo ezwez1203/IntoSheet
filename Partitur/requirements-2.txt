@@ -1,0 +1,11 @@
+-r requirements.txt
+
+# 개발 및 주피터 환경용 최상위 도구 (의존성 충돌 막기 위해 버전 미고정)
+colorit
+colorama
+isort
+pylint
+parse
+jupyter
+notebook
+ipywidgets

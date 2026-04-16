@@ -1,0 +1,77 @@
+Metadata-Version: 2.4
+Name: t5x
+Version: 0.0.0
+Summary: T5-eXtended in JAX
+Home-page: http://github.com/google-research/t5x
+Author: Google Inc.
+Author-email: no-reply@google.com
+License: Apache 2.0
+Keywords: text nlp machinelearning
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.11,<3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: absl-py
+Requires-Dist: cached_property
+Requires-Dist: clu==0.0.12
+Requires-Dist: flax==0.7.5
+Requires-Dist: fiddle<0.4,>=0.2.5
+Requires-Dist: gin-config
+Requires-Dist: jax==0.4.23
+Requires-Dist: jaxlib==0.4.23
+Requires-Dist: jaxtyping
+Requires-Dist: numpy<2.0,>=1.22
+Requires-Dist: optax==0.1.9
+Requires-Dist: orbax-checkpoint==0.4.4
+Requires-Dist: chex==0.1.85
+Requires-Dist: seqio==0.0.18
+Requires-Dist: setuptools==69.5.1
+Requires-Dist: scipy==1.11.4
+Requires-Dist: tensorflow==2.14.1
+Requires-Dist: tensorflow-text==2.14.0
+Requires-Dist: tensorflow-hub==0.15.0
+Requires-Dist: tensorstore<0.1.46,>=0.1.20
+Provides-Extra: gcp
+Requires-Dist: gevent; extra == "gcp"
+Requires-Dist: google-api-python-client; extra == "gcp"
+Requires-Dist: google-compute-engine; extra == "gcp"
+Requires-Dist: google-cloud-storage; extra == "gcp"
+Requires-Dist: oauth2client; extra == "gcp"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: t5; extra == "test"
+Provides-Extra: tpu
+Requires-Dist: jax[tpu]>=0.4.23; extra == "tpu"
+Provides-Extra: gpu
+Requires-Dist: ipdb==0.13.9; extra == "gpu"
+Requires-Dist: fasttext==0.9.2; extra == "gpu"
+Requires-Dist: pysimdjson==5.0.2; extra == "gpu"
+Requires-Dist: pytablewriter==0.64.2; extra == "gpu"
+Requires-Dist: gdown==4.5.3; extra == "gpu"
+Requires-Dist: best-download==0.0.9; extra == "gpu"
+Requires-Dist: lm_dataformat==0.0.20; extra == "gpu"
+Requires-Dist: dllogger @ git+https://github.com/NVIDIA/dllogger#egg=dllogger ; extra == "gpu"
+Requires-Dist: tfds-nightly; extra == "gpu"
+Requires-Dist: t5==0.9.4; extra == "gpu"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# T5X
+
+T5X is a modular, composable, research-friendly framework for high-performance,
+configurable, self-service training, evaluation, and inference of sequence models.
