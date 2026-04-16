@@ -63,15 +63,17 @@ MT3 converts audio into mel-spectrograms, then an encoder-decoder Transformer ge
 ### Install Dependencies
 
 ```bash
-# Install the MT3 package
-pip install -e mt3/
+# Recommended: install the whole project from the repository root
+pip install -e .
 
-# (If needed) Install JAX with GPU support
-pip install jax[cuda12] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-
-# Additional dependencies
-pip install librosa note-seq pyfluidsynth nest-asyncio
+# Or use the helper script
+bash run_all.sh install
 ```
+
+The root `setup.py` now installs:
+- the pinned Python 3.11 external dependencies
+- the extra Partitur runtime dependencies
+- the local `t5x/` and `mt3/` packages
 
 ### Run
 

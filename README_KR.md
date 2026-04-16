@@ -63,15 +63,17 @@ MT3는 오디오를 mel-spectrogram으로 변환한 뒤, encoder-decoder Transfo
 ### 의존성 설치
 
 ```bash
-# MT3 패키지 설치
-pip install -e mt3/
+# 권장: 루트 setup.py 한 번으로 전체 설치
+pip install -e .
 
-# (필요시) JAX GPU 버전 설치
-pip install jax[cuda12] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-
-# 추가 의존성
-pip install librosa note-seq pyfluidsynth nest-asyncio
+# 또는 제공 스크립트 사용
+bash run_all.sh install
 ```
+
+루트 `setup.py` 는 다음을 한 번에 처리합니다.
+- Python 3.11 기준 외부 의존성 설치
+- `Partitur/requirements.txt` 보조 의존성 설치
+- 로컬 `t5x/`, `mt3/` 패키지 설치
 
 ### 실행
 

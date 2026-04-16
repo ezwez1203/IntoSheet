@@ -36,6 +36,7 @@ usage() {
     echo ""
     echo "예시:"
     echo "  bash run_all.sh install"
+    echo "  python -m pip install -e ."
     echo "  bash run_all.sh train --model_type=mt3 --steps=10000"
     echo "  bash run_all.sh train --init_checkpoint=${CHECKPOINT_DIR}"
     echo "  bash run_all.sh infer /path/to/audio.wav"
@@ -47,28 +48,22 @@ usage() {
 # install: 의존성 설치
 # ──────────────────────────────────────────────
 do_install() {
-    local REQ_FILE="${SCRIPT_DIR}/requirements-py311.txt"
-
     if ! python -c "import sys; raise SystemExit(0 if sys.version_info[:2] == (3, 11) else 1)"; then
         echo "❌ 오류: Python 3.11 환경에서 설치를 진행해야 합니다."
         echo "   현재 버전: $(python --version 2>&1)"
         return 1
     fi
 
-    echo "[1/5] Python 3.11 호환 의존성을 설치합니다..."
+    echo "[1/4] Python 3.11 환경을 확인했습니다..."
+    python --version || return 1
+
+    echo "[2/4] pip를 최신 상태로 맞춥니다..."
     python -m pip install --upgrade pip || return 1
-    python -m pip install -r "${REQ_FILE}" || return 1
 
-    echo "[2/5] Partitur 보조 의존성을 설치합니다..."
-    python -m pip install -r "${SCRIPT_DIR}/Partitur/requirements.txt" || return 1
+    echo "[3/4] 루트 setup.py 기준으로 IntoSheet 전체를 설치합니다..."
+    python -m pip install -e "${SCRIPT_DIR}" --no-build-isolation || return 1
 
-    echo "[3/5] T5X 로컬 패키지를 설치합니다..."
-    python -m pip install -e "${T5X_DIR}/" --no-deps --no-build-isolation || return 1
-
-    echo "[4/5] MT3 로컬 패키지를 설치합니다..."
-    python -m pip install -e "${MT3_DIR}/" --no-deps --no-build-isolation || return 1
-
-    echo "[5/5] PDF 출력 디렉터리를 준비합니다..."
+    echo "[4/4] PDF 출력 디렉터리를 준비합니다..."
     mkdir -p "${SCRIPT_DIR}/checkpoints/pdf_output" || return 1
 
     echo ""
